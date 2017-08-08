@@ -1,0 +1,27 @@
+#publicpagenav{
+  border: 2px solid black;
+  width: 100%;
+  position: absolute;
+}
+
+#logo{
+  word-spacing: 0px;
+  text-align: left;
+  display: inline;
+  font-size: 30px;
+  padding-left: 2%;
+}
+
+#navlinks{
+  word-spacing: 50px;
+  display: inline;
+  float: right;
+  padding: 2%;
+}
+
+p{
+  border: 2px solid black;
+  text-align: center;
+  margin: 10%;
+  position: absolute;
+}
