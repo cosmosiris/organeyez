@@ -46,10 +46,11 @@ a:visited{
   font-family: 'Merienda', cursive;
   position: relative;
   display: block;
-  width: 50%;
+  width: 70%;
   margin: auto;
   margin-bottom: 3%;
   padding-left: 1%;
+  padding-right: 1%;
 }
 
 p{
@@ -69,4 +70,9 @@ p{
   margin: auto;
   width: 70%;
   font-size: 20px;
+  font-family: 'Merienda', cursive;
+}
+
+em{
+  text-decoration: underline;
 }
