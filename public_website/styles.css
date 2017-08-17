@@ -28,9 +28,21 @@ a:visited{
   color: black;
 }
 
-#intro{
+#tagline{
   border: 2px solid black;
   font-size: 40px;
+  font-family: 'Merienda', cursive;
+  text-align: center;
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3%;
+}
+
+#intro{
+  border: 2px solid black;
+  font-size: 20px;
   font-family: 'Merienda', cursive;
   text-align: center;
   position: relative;
@@ -71,8 +83,4 @@ p{
   width: 70%;
   font-size: 20px;
   font-family: 'Merienda', cursive;
-}
-
-em{
-  text-decoration: underline;
 }
