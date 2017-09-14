@@ -1,6 +1,15 @@
 body{
-  background-image: url(images/the-background-302314_1280.jpg);
-  background-size: cover;
+  /*background-image: url(images/the-background-302314_1280.jpg);*/
+  background: #FF4E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F9D423, #FF4E50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F9D423, #FF4E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+}
+
+.nav-item{
+  padding-left: 40px;
 }
 
 #logo{
@@ -15,7 +24,7 @@ a:link{
 }
 
 a:visited{
-  color: red;
+  color: #ff6a00;
 }
 
 /*homepage*/
@@ -121,7 +130,7 @@ p, h2{
 
 /*pricing*/
 #pricing{
-  padding: 30% 5% 30% 5%;}
+  padding: 10% 5% 10% 5%;}
 
 
 /*login*/
