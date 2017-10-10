@@ -1,3 +1,7 @@
+body * {
+  font-weight: bold;
+}
+
 body{
   /*background-image: url(images/the-background-302314_1280.jpg);*/
   background: #FF4E50;  /* fallback for old browsers */
@@ -118,6 +122,7 @@ p, h2{
 #setup_tagline_padding{
   padding-bottom: 10%;
 }
+
 .organization_account, .member_accounts{
   font-size: 20px;
   font-family: 'Trykker', serif;
