@@ -1,3 +1,7 @@
+body * {
+  font-weight: bold;
+}
+
 body{
   /*background-image: url(images/the-background-302314_1280.jpg);*/
   background: #FF4E50;  /* fallback for old browsers */
