@@ -14,3 +14,11 @@ get '/founder' do
   erb :'static/founder'
 end
 
+get '/login' do
+  erb :'static/login'
+end
+
+get '/registration' do
+  erb :'static/registration'
+end
+

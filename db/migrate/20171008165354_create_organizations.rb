@@ -1,8 +1,9 @@
-class CreateOrganizations < ActiveRecord::Migration
+class CreateOrganizations < ActiveRecord::Migration[5.1]
   def change
     create_table :organizations do |t|
-      t.string   :name, { null: false, limit: 50 }
-      t.string   :email, { null: false }
+      t.string   :name, null: false
+      t.string   :email, null: false
+      t.string   :password_hash, null: false
 
       t.timestamps
     end

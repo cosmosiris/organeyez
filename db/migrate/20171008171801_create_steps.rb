@@ -1,4 +1,4 @@
-class CreateSteps < ActiveRecord::Migration
+class CreateSteps < ActiveRecord::Migration[5.1]
   def change
     create_table :steps do |t|
       t.integer  :task_id, { null: false}
@@ -7,6 +7,6 @@ class CreateSteps < ActiveRecord::Migration
       t.string   :status, { null: false }
 
       t.timestamps
-  end
+    end
   end
 end

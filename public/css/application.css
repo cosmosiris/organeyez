@@ -27,7 +27,7 @@ a:visited{
 
 /*homepage*/
 .row, .col, .col-4, .col-6, .col-3{
-  /*border: 2px solid white;*/
+  border: 2px solid white;
 }
 
 #home_body, #setup_body{
@@ -105,7 +105,6 @@ p, h2{
 }
 
 
-
 /*setup*/
 
 #setup_title, #pricing{
@@ -137,3 +136,4 @@ p, h2{
   padding-top: 5%;
   padding-bottom: 5%;
 }
+
