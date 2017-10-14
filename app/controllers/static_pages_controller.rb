@@ -18,3 +18,7 @@ get '/login' do
   erb :'static/login'
 end
 
+get '/registration' do
+  erb :'static/registration'
+end
+
