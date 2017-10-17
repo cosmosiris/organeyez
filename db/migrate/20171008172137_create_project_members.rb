@@ -1,8 +1,8 @@
 class CreateProjectMembers < ActiveRecord::Migration[5.1]
   def change
     create_table :project_members do |t|
-      t.integer  :project_id, { null: false}
-      t.integer  :member_id, { null: false }
+      t.references  :project, { null: false}
+      t.references  :member, { null: false }
 
       t.timestamps
     end
