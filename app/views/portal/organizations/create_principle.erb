@@ -1,0 +1,24 @@
+<h2>Add a Principle</h2>
+
+<form action="/org_sessions/<%= current_org.id %>/profile/create_principle" method="POST">
+  <label>Principle Name</label>
+  <input type="text" name="principle">
+  <label>Principle Description</label>
+   <textarea name="description" rows="2" cols="60"></textarea>
+  <input type="submit" value="submit">
+</form>
+
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <% if @errors %>
+      <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <div class="col-4"></div>
+</div>
+

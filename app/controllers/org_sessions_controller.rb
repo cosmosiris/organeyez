@@ -47,3 +47,19 @@ put '/org_sessions/:id/profile/mission_statement' do
 end
 
 
+get '/org_sessions/:id/profile/create_principle' do
+
+
+  erb :'portal/organizations/create_principle', :layout => :'layouts/organization_layout'
+end
+
+post '/org_sessions/:id/profile/create_principle' do
+  @principle = Principle.new(principle: params[:principle], description: params[:description], organization_id: current_org.id)
+  if @principle.save
+    redirect "/org_sessions/#{current_org.id}/profile"
+  else
+    @errors = ["Your principle did not save"]
+    erb :'portal/organizations/create_principle', :layout => :'layouts/organization_layout'
+  end
+end
+

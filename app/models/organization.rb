@@ -5,7 +5,8 @@ class Organization < ApplicationRecord
 
   has_many  :projects
   has_many  :organization_members
-  has_many  :members, through: :organization_members
+  has_many  :members, through: :organization_members, class_name: "User"
+  has_many  :principles, foreign_key: :organization_id
   validates :name, :email, :password_hash, presence: true
   validates :email, uniqueness: true
   validate  :presence_of_password
