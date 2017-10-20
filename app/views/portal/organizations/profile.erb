@@ -1,0 +1,27 @@
+<h2 id="welcome"><%= current_org.name %></h2>
+
+<div id="cover_photo_box">
+  <p>Add photo here</p>
+</div>
+
+<div id="mission_box">
+  <h2><strong>Mission Statement</strong></h2>
+  <a class="edit_button" href="/org_sessions/:id/profile/mission_statement">edit</a>
+  <p><em><%= current_org.mission %></em></p>
+</div>
+
+<div id="principle_box">
+  <h2>Principles</h2>
+  <a class="edit_button" href="/org_sessions/:id/profile/create_principle">add</a>
+
+  <ul id="principles_list">
+    <% current_org.principles.each do |principle| %>
+       <li>
+         <p><strong><%= principle.principle %></strong></p>
+         <p><em><%= principle.description %></em></p>
+       </li>
+    <% end %>
+  </ul>
+</div>
+
+
