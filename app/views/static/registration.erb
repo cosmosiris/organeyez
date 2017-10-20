@@ -2,36 +2,46 @@
   <div class="col-4"></div> <!-- Column 1 -->
   <div class="col-4"> <!-- Column 2 -->
     <h2>Member Sign-Up</h2>
-    <form>
+    <form action="/members" method="POST">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label class="col-form-label">First Name</label>
-          <input type="text" class="form-control" placeholder="Ashley">
+          <input type="text" name="user[first_name]" class="form-control" placeholder="Ashley">
         </div>
         <div class="form-group col-md-6">
           <label class="col-form-label">Last Name</label>
-          <input type="text" class="form-control" placeholder="Cole">
+          <input type="text" name="user[last_name]" class="form-control" placeholder="Cole">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-form-label">Email</label>
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="email" name="user[email]"class="form-control" placeholder="Email">
       </div>
 
       <div class="form-group">
         <label class="col-form-label">Password</label>
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="user[password]"class="form-control" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label class="col-form-label">Confirm Password</label>
+          <input type="password" name="confirmed_password"class="form-control" placeholder="Password">
       </div>
 
       <div class="form-row">
         <div class="form-group col-md-6">
           <label class="col-form-label">Sign-Up Code</label>
-          <input type="text" class="form-control">
+          <input type="text" name="sign_up_code"class="form-control">
         </div>
         <div class="form-group col-md-6">
           <label for="Organization" class="col-form-label">Organization</label>
-          <select class="form-control">Choose</select>
+          <select class="form-control" name="organization">
+          <% @org_list = list_organizations %>
+          <% @org_list.each do |org| %>
+            <option><%= org.name  %></option>
+          <% end %>
+          </select>
         </div>
       </div>
 

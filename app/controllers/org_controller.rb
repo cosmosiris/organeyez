@@ -1,5 +1,6 @@
 post '/organizations' do
   @organization = Organization.new(params[:organization])
+  @organization.code = rand(10000)
   @confirmed = params[:organization][:password] == params[:confirmed_password]
   if @confirmed && @organization.save
     session[:id] = @organization.id

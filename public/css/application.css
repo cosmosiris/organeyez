@@ -170,7 +170,12 @@ p, h2{
   border: 3px solid white;
 }
 
-
+.member_home_grid{
+  display: inline;
+  margin: 0 auto;
+  border: 3px solid white;
+  height: 1000px;
+}
 
 
 /*organization profile page*/

@@ -3,6 +3,7 @@ require 'bcrypt'
 class Organization < ApplicationRecord
   include BCrypt
 
+  before_create :create_code
   has_many  :projects
   has_many  :organization_members
   has_many  :members, through: :organization_members, class_name: "User"
@@ -32,6 +33,10 @@ class Organization < ApplicationRecord
     if @plain_text_password == ""
       errors.add(:password, "can't be empty")
     end
+  end
+
+  def create_code
+    self.code = rand(10000)
   end
 
 end
