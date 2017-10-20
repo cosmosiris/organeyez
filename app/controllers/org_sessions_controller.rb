@@ -54,7 +54,8 @@ get '/org_sessions/:id/profile/create_principle' do
 end
 
 post '/org_sessions/:id/profile/create_principle' do
-  @principle = Principle.new(principle: params[:principle], description: params[:description], organization_id: current_org.id)
+  p "*" * 50
+  p @principle = Principle.new(principle: params[:principle], description: params[:description], organization_id: current_org.id)
   if @principle.save
     redirect "/org_sessions/#{current_org.id}/profile"
   else

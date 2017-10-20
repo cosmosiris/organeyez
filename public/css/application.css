@@ -151,9 +151,22 @@ p, h2{
   text-align: center;
 }
 
-.edit_box{
-  position: relative;
+#mission_box, #principle_box{
+  display: inline-block;
+  border: 3px solid white;
+  padding: 5%;
+}
+
+#principles_list{
+  list-style-type: none;
   text-align: center;
+}
+
+#cover_photo_box{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 300px;
   border: 3px solid white;
 }
 
