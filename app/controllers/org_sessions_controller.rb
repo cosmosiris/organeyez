@@ -14,6 +14,7 @@ post '/org_sessions' do
   end
 end
 
+
 get '/org_sessions/:id' do
   @organization = Organization.find(params[:id])
 
@@ -48,7 +49,6 @@ end
 
 
 get '/org_sessions/:id/profile/create_principle' do
-
 
   erb :'portal/organizations/create_principle', :layout => :'layouts/organization_layout'
 end
