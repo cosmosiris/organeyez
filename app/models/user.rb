@@ -4,8 +4,8 @@ class User < ApplicationRecord
 
   include BCrypt
 
-  has_many :organization_members, foreign_key: :member_id
-  has_many :organizations, through: :organization_members
+  has_many :memberships, foreign_key: :member_id
+  has_many :organizations, through: :memberships
   has_many :reviews, foreign_key: :writer_id
   has_many :project_members, foreign_key: :member_id
   has_many :projects, through: :project_members

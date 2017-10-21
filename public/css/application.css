@@ -148,7 +148,9 @@ p, h2{
   position: relative;
   display: inline;
   margin: auto;
+  height: 1000px;
   text-align: center;
+  border: 3px solid white;
 }
 
 #mission_box, #principle_box{
@@ -175,6 +177,7 @@ p, h2{
   margin: 0 auto;
   border: 3px solid white;
   height: 1000px;
+  text-align: center;
 }
 
 
