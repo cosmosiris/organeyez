@@ -6,3 +6,4 @@ class Project < ApplicationRecord
 
   validates :name, :organization_id, :start_date, :end_date, {presence: true}
 end
+

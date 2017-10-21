@@ -20,21 +20,16 @@
 
   <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
     <h3>Projects</h3>
-    <form action="projects/new" method="POST">
+    <form action="projects/new" method="GET">
         <input type="Submit" value="Create a Project">
     </form>
-    <table style="width:100%">
-      <tr>
-        <th>Project</th>
-        <th>Status</th>
-        <th>Completion Date</th>
-      </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-    </table>
+    <% current_org.projects.each do |project| %>
+      <div id="homepage_project_view">
+        <p><%= project.name  %></p>
+        <span>Start Date: <%= project.start_date %></span>
+        <span class="end_date"><em></em>End Date: <%= project.end_date %></span>
+      </div>
+    <% end %>
 
   </div>
 
