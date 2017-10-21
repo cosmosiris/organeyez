@@ -159,9 +159,9 @@ p, h2{
   padding: 5%;
 }
 
-#principles_list{
+li{
   list-style-type: none;
-  text-align: center;
+  text-align: left;
 }
 
 #cover_photo_box{
