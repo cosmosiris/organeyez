@@ -14,8 +14,8 @@ class EventBriteAdapter
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
     request = Net::HTTP::Get.new(@url)
-    request["cache-control"] = 'no-cache'
-    request["postman-token"] = '360098b1-ac77-834a-589a-47373822397e'
+    # request["cache-control"] = 'no-cache'
+    # request["postman-token"] = '360098b1-ac77-834a-589a-47373822397e'
 
     response = http.request(request)
     response.read_body
