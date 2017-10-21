@@ -5,10 +5,10 @@
 
 
 <div class="row organization_account">
-  <div class="col-4 org_home_grid"> <!-- Display Members -->
+  <div class="col-2 org_home_grid"> <!-- Display Members -->
       <h3>Members</h3>
       <form action="">
-        <input type="Submit" value="Add/Delete Members">
+        <input type="Submit" value="Edit Members">
       </form>
       <ul>
         <% current_org.members.each do |member| %>
@@ -18,11 +18,27 @@
 
   </div>
 
-  <div class="col-4 org_home_grid"> <!-- Display Last 5 Projects -->
+  <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
     <h3>Projects</h3>
+    <form action="projects/new" method="POST">
+        <input type="Submit" value="Create a Project">
+    </form>
+    <table style="width:100%">
+      <tr>
+        <th>Project</th>
+        <th>Status</th>
+        <th>Completion Date</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+    </table>
+
   </div>
 
-  <div class="col-4 org_home_grid">
+  <div class="col-5 org_home_grid">
     <h3>Accountability Processes</h3>
   </div>
 </div>

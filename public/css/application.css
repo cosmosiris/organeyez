@@ -164,6 +164,10 @@ li{
   text-align: left;
 }
 
+th{
+  text-decoration: underline;
+}
+
 #cover_photo_box{
   display: block;
   margin: 0 auto;
@@ -171,6 +175,8 @@ li{
   height: 300px;
   border: 3px solid white;
 }
+
+/*##member home page*/
 
 .member_home_grid{
   display: inline;
