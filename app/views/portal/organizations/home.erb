@@ -20,7 +20,7 @@
 
   <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
     <h3>Projects</h3>
-    <form action="projects/new" method="GET">
+    <form action="projects/new" method="GET" id="new_project_button">
         <input type="Submit" value="Create a Project">
     </form>
     <% current_org.projects.each do |project| %>

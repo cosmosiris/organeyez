@@ -1,6 +1,9 @@
 get '/org_sessions/projects/new' do
-
-  erb :'portal/projects/new'
+  if request.xhr?
+    erb :'portal/projects/new', layout: false
+  else
+    erb :'portal/projects/new'
+  end
 end
 
 post '/projects' do
