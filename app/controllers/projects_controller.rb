@@ -32,9 +32,13 @@ put '/projects' do
 end
 
 delete '/projects/:id' do
-    p "************************"
-    Project.find(params[:id]).destroy
+  Project.find(params[:id]).destroy
+  if request.xhr?
+    status 200
     redirect "/org_sessions/#{current_org.id}"
+  else
+    redirect "/org_sessions/#{current_org.id}"
+  end
 end
 
 get '/org_sessions/:id/projects/new' do
@@ -45,8 +49,22 @@ get '/org_sessions/:id/projects/new' do
   end
 end
 
+post '/tasks' do
+  @task = Task.new(params[:task])
+
+end
+
+get "/org_sessions/:id/projects/:id/edit/tasks/new" do
+   if request.xhr?
+    erb :'portal/tasks/new', layout: false
+  else
+    erb :'portal/tasks/new'
+  end
+end
+
 get '/projects/:id/edit' do
   @project = Project.find(params[:id])
   erb :'portal/projects/edit', :layout => :'layouts/organization_layout'
 end
+
 

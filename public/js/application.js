@@ -2,6 +2,7 @@ $(document).ready(function() {
   renderNewProjectForm()
   deleteProject()
   submitNewProject()
+  renderNewTaskForm()
 });
 
 var renderNewProjectForm = function(){
@@ -16,11 +17,11 @@ var renderNewProjectForm = function(){
 var submitNewProject = function(){
   $("#new_project_container").on("submit", "#new_project_form", function(event){
     event.preventDefault();
+    console.log(this)
 
     var url = $(this).attr("action")
     var method = $(this).attr("method")
     data = $(this).serialize();
-    console.log(this)
 
     $.ajax({
       url: url,
@@ -35,8 +36,6 @@ var submitNewProject = function(){
   $("#new_project_button").show();
   });
 }
-
-
 
 
 var deleteProject = function(){
@@ -61,3 +60,11 @@ var deleteProject = function(){
   });
 };
 
+var renderNewTaskForm = function(){
+  $("#new_task_button").on("click", function(event){
+    event.preventDefault();
+
+    $("#new_task_button").hide();
+    $("#new_task_form").removeClass("hidden");
+  });
+};

@@ -23,15 +23,15 @@
 
     <div id="new_project_container">
      <a href="/org_sessions/<%= current_org.id  %>/projects/new" id="new_project_button">Create a New Project</a>
-    </div>
 
-    <form action="/projects" method="POST" id="new_project_form" class="hidden">
-      <input type="text" name="project[name]" placeholder="title">
-      <input type="text" name="project[start_date]" placeholder="start_date">
-      <input type="text" name="project[end_date]" placeholder="end_date">
-      <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
-      <input type="submit" name="Create Project">
-    </form>
+      <form action="/projects" method="POST" id="new_project_form" class="hidden">
+        <input type="text" name="project[name]" placeholder="title">
+        <input type="text" name="project[start_date]" placeholder="start_date">
+        <input type="text" name="project[end_date]" placeholder="end_date">
+        <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
+        <input type="submit" name="Create Project">
+      </form>
+    </div>
 
 
     <div id="project_display_list">
