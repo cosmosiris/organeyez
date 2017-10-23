@@ -11,7 +11,8 @@ class User < ApplicationRecord
   has_many :projects, through: :project_members
   has_many :tasks, foreign_key: :leader_id
 
-  validates :first_name, :last_name, :email, :password_hash, presence: true
+  validates :first_name, :last_name, :email, presence: true
+  validates :email, uniqueness: true
   validate  :presence_of_password
 
   def password
