@@ -4,7 +4,7 @@ Organization.destroy_all
 User.destroy_all
 Membership.destroy_all
 
-dd = Organization.create(name: "Dream Defenders", email: "dd@gmail.com", password: "1234")
+Organization.create(name: "Dream Defenders", email: "dd@gmail.com", password: "1234")
 
 Organization.create(name: "The Alliance", email: "alliance@gmail.com", password: "1234", code: "4500")
 
