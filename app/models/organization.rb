@@ -8,8 +8,8 @@ class Organization < ApplicationRecord
   has_many  :memberships
   has_many  :members, through: :memberships, source: 'member'
   has_many  :principles, foreign_key: :organization_id
-  validates :name, :email, :password_hash, presence: true
-  validates :email, presence: true
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
   validate  :presence_of_password
 
   def password
