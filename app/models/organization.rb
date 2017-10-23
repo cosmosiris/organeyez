@@ -5,11 +5,11 @@ class Organization < ApplicationRecord
 
   before_create :create_code
   has_many  :projects
-  has_many  :organization_members
-  has_many  :members, through: :organization_members, class_name: "User"
+  has_many  :memberships
+  has_many  :members, through: :memberships, source: 'member'
   has_many  :principles, foreign_key: :organization_id
   validates :name, :email, :password_hash, presence: true
-  validates :email, uniqueness: true
+  validates :email, presence: true
   validate  :presence_of_password
 
   def password

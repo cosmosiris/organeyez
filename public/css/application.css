@@ -148,7 +148,9 @@ p, h2{
   position: relative;
   display: inline;
   margin: auto;
+  height: 1000px;
   text-align: center;
+  border: 3px solid white;
 }
 
 #mission_box, #principle_box{
@@ -157,10 +159,51 @@ p, h2{
   padding: 5%;
 }
 
-#principles_list{
+li{
   list-style-type: none;
-  text-align: center;
+  text-align: left;
 }
+
+.homepage_project_view{
+  background-color: white;
+  border: 3px solid white;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  height: 16%;
+}
+
+.end_date, .delete_project_form{
+  float: right;
+}
+
+.project_delete_button, .project_view_button{
+  height: 20px;
+  font-size: 10px;
+}
+
+#new_project_button{
+  font-size: 15px;
+}
+
+.project_status{
+  float: center;
+}
+
+.hidden{
+  display: none;
+}
+
+/*tasks*/
+
+#new_task_form{
+  margin: 0 auto;
+  border: 3px solid white;
+  padding: 10% 30%;
+}
+
+
+/*organization profile page*/
 
 #cover_photo_box{
   display: block;
@@ -170,11 +213,22 @@ p, h2{
   border: 3px solid white;
 }
 
+/*project pages*/
+.edit_project_box{
+  margin: 0 auto;
+  width: 60%;
+  border: 3px solid white;
+  height: 80vh;
+}
+
+/*##member home page*/
+
 .member_home_grid{
   display: inline;
   margin: 0 auto;
   border: 3px solid white;
   height: 1000px;
+  text-align: center;
 }
 
 

@@ -1,6 +1,6 @@
-class CreateOrganizationMembers < ActiveRecord::Migration[5.1]
+class CreateMemberships < ActiveRecord::Migration[5.1]
   def change
-    create_table :organization_members do |t|
+    create_table :memberships do |t|
       t.references  :organization,  null: false
       t.references  :member,  null: false
 
