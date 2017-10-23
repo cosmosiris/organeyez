@@ -1,0 +1,12 @@
+<div class="homepage_project_view">
+  <p><%= project.name  %></p>
+  <span>Start Date: <%= project.start_date %></span>
+  <span class="end_date"><em></em>End Date: <%= project.end_date %></span>
+  <p class="project_status">Status:</p>
+  <button class="project_view_button"><a href="/projects/<%= project.id %>/edit">View</a></button>
+  <form action="/projects/<%= project.id  %>" method="POST" class="delete_project_form">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete" class="project_delete_button">
+  </form>
+</div>
+

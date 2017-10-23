@@ -1,0 +1,44 @@
+<div class="edit_project_box">
+  <form action="/projects" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <input type="hidden" name="project_id" value="<%= @project.id %>">
+    <label>Project Name</label>
+    <input type="text" name="name" placeholder="title" value="<%= @project.name  %>">
+    <label>Start Date</label>
+    <input type="text" name="start_date" placeholder="start_date" value="<%= @project.start_date  %>">
+    <label>End Date</label>
+    <input type="text" name="end_date" placeholder="end_date" value="<%= @project.end_date  %>">
+    <input type="submit" value="edit">
+  </form>
+
+  <div id="new_task_container">
+    <a href="/org_sessions/<%=current_org.id%>/projects/<%=@project.id%>/edit/tasks/new" id="new_task_button">Add Task</a>
+
+    <form action="/tasks" method="POST" id="new_task_form" class="hidden">
+      <label>Task Name</label>
+      <input type="text" name="task[name]" placeholder="name">
+      <input type="hidden" name="task[project]" value="<%= @project.id  %>"><br>
+      <label>Task Leader</label>
+      <select class="form-control inline leader" name="task[leader]">
+        <% @member_list = current_org.members %>
+        <% @member_list.each do |member| %>
+          <option class="inline leader"><%= member.first_name %> <% member.last_name  %></option>
+        <% end %>
+      </select>
+      <textarea name="task[message]" rows="2" cols="60" placeholder="short description"></textarea>
+      <input type="submit" name="Create Task">
+    </form>
+  </div>
+
+  <div id="project_task_list">
+    <% if @project.tasks %>
+      <% @project.tasks do |task| %>
+        <%= erb :"portal/projects/_tasks", layout: false, locals: { task: task} %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <a href="/org_sessions/<%= current_org.id  %>">Update Project</a>
+
+</div>
+

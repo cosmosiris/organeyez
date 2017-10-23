@@ -1,9 +1,10 @@
 post '/organizations' do
   @organization = Organization.new(params[:organization])
+  @organization.code = rand(10000)
   @confirmed = params[:organization][:password] == params[:confirmed_password]
   if @confirmed && @organization.save
     session[:id] = @organization.id
-    redirect "/organizations/#{@organization.id}"
+    redirect "/org_sessions/#{@organization.id}"
   else
     @errors = @organization.errors.full_messages
     @errors << "Passwords don't match" unless @confirmed
@@ -11,13 +12,6 @@ post '/organizations' do
   end
 end
 
-get '/organizations/:id' do
-  @organization = Organization.find(params[:id])
 
-  erb :'portal/organizations/show', :layout => :'layouts/organization_layout'
-end
 
-get '/organizations/:id/profile' do
-
-end
 
