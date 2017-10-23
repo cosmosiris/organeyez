@@ -1,34 +1,53 @@
 <!-- portal/organizations/show -->
 
-<h1>Welcome <%= @organization.name %></h1>
+<h2 id="welcome"><%= current_org.name %></h2>
+<h3 id="welcome"><%= current_org.code %></h3>
 
-<div class="row">
-  <div class="col-4"> <!-- Display Members -->
+
+<div class="row organization_account">
+  <div class="col-2 org_home_grid"> <!-- Display Members -->
       <h3>Members</h3>
       <form action="">
-        <input type="Submit" value="Create New Members">
+        <input type="Submit" value="Edit Members">
       </form>
+      <ul>
+        <% current_org.members.each do |member| %>
+          <li><%= member.first_name %> <%= member.last_name %></li>
+        <% end %>
+      </ul>
+
   </div>
 
-  <div class="col-4"> <!-- Display Last 5 Projects -->
+  <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
     <h3>Projects</h3>
+
+    <div id="new_project_container">
+     <a href="/org_sessions/<%= current_org.id  %>/projects/new" id="new_project_button">Create a New Project</a>
+
+      <form action="/projects" method="POST" id="new_project_form" class="hidden">
+        <input type="text" name="project[name]" placeholder="title">
+        <input type="text" name="project[start_date]" placeholder="start_date">
+        <input type="text" name="project[end_date]" placeholder="end_date">
+        <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
+        <input type="submit" name="Create Project">
+      </form>
+    </div>
+
+
+    <div id="project_display_list">
+    <% if current_org.projects %>
+      <% current_org.projects.each do |project| %>
+        <%= erb :"portal/projects/_projects", layout: false, locals: { project: project} %>
+      <% end %>
+    <% end %>
+    </div>
   </div>
 
-  <div class="col-4">
+  <div class="col-5 org_home_grid">
     <h3>Accountability Processes</h3>
   </div>
+
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
 <!-- Accountability Processes -->
-
