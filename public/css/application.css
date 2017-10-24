@@ -162,44 +162,35 @@ p, h2{
 li{
   list-style-type: none;
   text-align: left;
+  padding: 0;
 }
 
-.homepage_project_view{
-  background-color: white;
-  border: 3px solid white;
+.homepage_project_view_box, .task_view_box{
+  background-color: #f2f2f2;
+  border: 2px solid #d9d9d9;
   text-align: left;
   margin-bottom: 5%;
   margin-top: 5%;
   height: 16%;
+  border-radius: 10px;
+  box-shadow: 5px 5px grey;
 }
 
-.end_date, .delete_project_form{
-  float: right;
-}
-
-.project_delete_button, .project_view_button{
-  height: 20px;
-  font-size: 10px;
+.project_delete_button, .project_view_button, .task_delete_button, .steps_view_button, .task_view_button{
+  font-size: 15px;
+  background-color: white;
+  border-color: #e6ccb3;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-family: sans-serif;
 }
 
 #new_project_button{
   font-size: 15px;
-}
-
-.project_status{
-  float: center;
-}
-
-.hidden{
-  display: none;
-}
-
-/*tasks*/
-
-#new_task_form{
-  margin: 0 auto;
-  border: 3px solid white;
-  padding: 10% 30%;
+  background-color: #f2f2f2;
 }
 
 
@@ -214,12 +205,42 @@ li{
 }
 
 /*project pages*/
-.edit_project_box{
+#project_details_box{
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   border: 3px solid white;
-  height: 80vh;
+  min-height: 100vh;
 }
+
+#edit_project_form{
+  padding: 15px 0px;
+}
+
+
+/*tasks*/
+
+#new_task_form{
+  margin: 0 auto;
+  border: 3px solid white;
+  padding: 8% 30%;
+  text-align: center;
+}
+
+#project_task_list{
+  /*border: 3px solid white;*/
+  width: 50%;
+  margin: 0 auto
+}
+
+.project_task{
+  height: 200px;
+}
+
+.update_project_button{
+  margin: 1%;
+}
+
+
 
 /*##member home page*/
 
@@ -233,4 +254,48 @@ li{
 
 
 /*organization profile page*/
+
+
+/*general styles*/
+.textcenter{
+  text-align: center;
+}
+
+.hidden{
+  display: none;
+}
+
+.floatcenter{
+  float: center;
+}
+
+.floatright{
+  float: right;
+}
+
+.block{
+  display: block;
+}
+
+.inline{
+  display: inline;
+}
+
+ul{
+  padding: 0;
+}
+
+.page_headings{
+  font-size: 30px;
+  font-weight: 200px;
+}
+
+.margincenter{
+  margin: 0 auto;
+}
+
+.border{
+  border: 3px solid white;
+}
+
 

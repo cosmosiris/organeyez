@@ -17,7 +17,6 @@ var renderNewProjectForm = function(){
 var submitNewProject = function(){
   $("#new_project_container").on("submit", "#new_project_form", function(event){
     event.preventDefault();
-    console.log(this)
 
     var url = $(this).attr("action")
     var method = $(this).attr("method")
@@ -30,6 +29,7 @@ var submitNewProject = function(){
     }).done(function(response){
       $("#new_project_form").addClass("hidden");
       $("#project_display_list").append(response);
+      console.log(this)
     }).fail(function(error){
        $("#project_display_list").append(error.responseText);
     });

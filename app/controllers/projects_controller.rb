@@ -49,18 +49,7 @@ get '/org_sessions/:id/projects/new' do
   end
 end
 
-post '/tasks' do
-  @task = Task.new(params[:task])
 
-end
-
-get "/org_sessions/:id/projects/:id/edit/tasks/new" do
-   if request.xhr?
-    erb :'portal/tasks/new', layout: false
-  else
-    erb :'portal/tasks/new'
-  end
-end
 
 get '/projects/:id/edit' do
   @project = Project.find(params[:id])

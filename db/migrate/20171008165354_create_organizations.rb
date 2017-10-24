@@ -4,6 +4,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.1]
       t.string   :name, null: false
       t.string   :email, null: false
       t.string   :password_hash
+      t.text     :mission, default: ""
       t.integer  :code
 
       t.timestamps
