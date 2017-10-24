@@ -18,10 +18,10 @@
 
   </div>
 
-  <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
+  <div class="col-5 org_home_grid" id="new_project_container"> <!-- Display Last 5 Projects -->
     <p class="page_headings">Projects</p>
 
-    <div>
+
     <button id="new_project_button"><a href="/org_sessions/<%= current_org.id  %>/projects/new">Create a New Project</a></button>
 
       <form action="/projects" method="POST" id="new_project_form" class="hidden">
@@ -31,7 +31,7 @@
         <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
         <input type="submit" name="Create Project">
       </form>
-    </div>
+
 
 
     <div id="project_display_list">

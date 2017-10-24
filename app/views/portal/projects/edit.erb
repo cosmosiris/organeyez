@@ -37,24 +37,13 @@
   <div class="textcenter" id="project_task_list">
     <p class="page_headings">Project Tasks</p>
     <button><a href="/org_sessions/<%=current_org.id%>/projects/<%=@project.id%>/edit/tasks/new" id="new_task_button">Add Task</a></button>
-    <ul>
+    <% if @project.tasks %>
       <% @project.tasks.each do |task| %>
-      <div class="task_view_box">
-        <li>
-          <p><%= task.name %></p>
-          <p><%= task.leader.first_name%> <%= task.leader.last_name%></p>
-          <p><%= task.notes %></p>
-          <form action="/tasks/<%= task.id  %>" method="POST">
-          <button class="task_view_button"><a href="">Edit</a></button>
-          <button class="steps_view_button"><a href="">View Steps</a></button>
-          <input type="hidden" name="project_id" value=<%= @project.id %>>
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" value="delete" class="task_delete_button floatright">
-          </form>
-        </li>
-      </div>
+        <ul>
+        <%= erb :"portal/tasks/_tasks", layout: false, locals: { task: task} %>
+        </ul>
       <% end %>
-    </ul>
+    <% end %>
   </div>
 
 </div>
