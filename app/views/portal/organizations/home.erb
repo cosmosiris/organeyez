@@ -6,7 +6,7 @@
 
 <div class="row organization_account">
   <div class="col-2 org_home_grid"> <!-- Display Members -->
-      <h3>Members</h3>
+      <p class="page_headings">Members</p>
       <form action="">
         <input type="Submit" value="Edit Members">
       </form>
@@ -19,10 +19,10 @@
   </div>
 
   <div class="col-5 org_home_grid"> <!-- Display Last 5 Projects -->
-    <h3>Projects</h3>
+    <p class="page_headings">Projects</p>
 
-    <div id="new_project_container">
-     <a href="/org_sessions/<%= current_org.id  %>/projects/new" id="new_project_button">Create a New Project</a>
+    <div>
+    <button id="new_project_button"><a href="/org_sessions/<%= current_org.id  %>/projects/new">Create a New Project</a></button>
 
       <form action="/projects" method="POST" id="new_project_form" class="hidden">
         <input type="text" name="project[name]" placeholder="title">
@@ -44,7 +44,7 @@
   </div>
 
   <div class="col-5 org_home_grid">
-    <h3>Accountability Processes</h3>
+    <p class="page_headings">Accountability Processes</p>
   </div>
 
 </div>
