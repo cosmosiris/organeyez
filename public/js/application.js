@@ -98,7 +98,7 @@ var submitNewTask = function(){
 }
 
 var deleteTask = function(){
-   $("#project_display_list").on("submit", ".delete_project_form", function(event){
+   $("#project_task_list").on("submit", ".delete_task_form", function(event){
     event.preventDefault();
     var url = $(this).attr("action")
     var method = $(this).attr("method")
@@ -111,10 +111,10 @@ var deleteTask = function(){
       context: this,
       data: data
     }).done(function(response){
-      $(this).closest(".homepage_project_view_box").remove();
+      $(this).closest(".task_view_box").remove();
       console.log("removed");
     }).fail(function(error){
-      $(".homepage_project_view_box").prepend(error.responseText);
+      $(".task_view_box").prepend(error.responseText);
     });
   });
 };
