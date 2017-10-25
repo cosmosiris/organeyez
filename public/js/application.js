@@ -2,9 +2,12 @@ $(document).ready(function() {
   renderNewProjectForm();
   deleteProject();
   submitNewProject();
+  editProject();
   renderNewTaskForm();
   submitNewTask();
   deleteTask();
+  renderTaskEditForm();
+  editTask();
 });
 
 var renderNewProjectForm = function(){
@@ -64,6 +67,27 @@ var deleteProject = function(){
   });
 };
 
+var editProject = function(){
+  $("#edit_project_form").on("submit", function(event){
+    event.preventDefault();
+    console.log("preventdefault");
+
+    url = $(this).attr("action");
+
+    $.ajax({
+      url: url,
+      method: "put",
+      data: $(this).serialize()
+    }).done(function(response){
+      console.log("SUCCESS");
+    }).fail(function(error){
+      $("#edit_project_button").prepend(error.responseText);
+      console.log("fail");
+    });
+  })
+}
+
+
 var renderNewTaskForm = function(){
   $("#new_task_button").on("click", function(event){
     event.preventDefault();
@@ -118,3 +142,30 @@ var deleteTask = function(){
     });
   });
 };
+
+var renderTaskEditForm = function(){
+  $(".task_edit_button").on("click", function(event){
+    event.preventDefault();
+    console.log("success")
+  });
+}
+
+var editTask = function(){
+  $("#edit_task_form").on("submit", function(event){
+    event.preventDefault();
+    console.log("preventdefault");
+
+    url = $(this).attr("action");
+
+    $.ajax({
+      url: url,
+      method: "put",
+      data: $(this).serialize()
+    }).done(function(response){
+      console.log("SUCCESS");
+    }).fail(function(error){
+      $("#edit_project_button").prepend(error.responseText);
+      console.log("fail");
+    });
+  })
+}

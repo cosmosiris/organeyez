@@ -26,10 +26,19 @@ put '/projects' do
   @project[:end_date] = params[:end_date]
 
   if @project.save
-    redirect "/projects/#{@project.id}/edit"
+    if request.xhr?
+      status 200
+    else
+      redirect "/projects/#{@project.id}/edit"
+    end
   else
-    @errors = ["Your message did not save"]
-    erb :_errors, layout: false, locals: {errors: @errors }
+    @errors = @project.errors.full_messages
+    if request.xhr?
+      status 422
+      erb :_errors, layout: false, locals: {errors: @errors }
+    else
+      redirect "/projects/#{@project.id}/edit"
+    end
   end
 end
 

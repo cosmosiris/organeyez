@@ -1,12 +1,14 @@
 <div class="homepage_project_view_box">
   <p><%= project.name  %></p>
   <span>Start Date: <%= project.start_date %></span>
-  <span class="floatright"><em></em>End Date: <%= project.end_date %></span>
-  <p class="floatcenter">Status:</p>
-  <button class="project_view_button"><a href="/projects/<%= project.id %>/edit">View</a></button>
-  <form action="/projects/<%= project.id  %>" method="POST" class="floatright delete_project_form">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete" class="project_delete_button">
-  </form>
+  <span><em></em>End Date: <%= project.end_date %></span>
+  <p>Status:</p>
+  <div class="project_buttons">
+    <button class="project_view_button"><a href="/projects/<%= project.id %>/edit">View</a></button>
+    <form action="/projects/<%= project.id  %>" method="POST" class="delete_project_form">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete" class="project_delete_button">
+    </form>
+  </div>
 </div>
 
