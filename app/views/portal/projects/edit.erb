@@ -37,7 +37,7 @@
 
   <div class="textcenter" id="project_task_list">
     <p class="page_headings"><%= @project.name %><br>Tasks</p>
-    <button id="new_task_button"><a href="/org_sessions/<%=current_org.id%>/projects/<%=@project.id%>/edit/tasks/new">Add Task</a></button>
+    <button id="new_task_button"><a href="/projects/<%=@project.id%>/edit/tasks/new">Add Task</a></button>
     <% if @project.tasks %>
       <% @project.tasks.each do |task| %>
         <ul>

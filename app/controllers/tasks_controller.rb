@@ -19,13 +19,13 @@ post '/tasks' do
   end
 end
 
-put '/projects' do
+put '/tasks' do
   @project = current_org.projects.find(params[:project_id])
   @task = @project.tasks.find(params[:task_id])
   @task[:name] = params[:name]
   @task[:description] = params[:description]
   @task[:notes] = params[:notes]
-  @task[:leader] = params[:leader_id]
+  @task[:leader_id] = params[:leader_id]
 
   if @task.save
     if request.xhr?
@@ -44,10 +44,24 @@ put '/projects' do
   end
 end
 
-get "/org_sessions/:id/projects/:project_id/edit/tasks/new" do
+get "/projects/:project_id/edit/tasks/new" do
 
   unless request.xhr?
     erb :'portal/tasks/new'
+  end
+end
+
+get "/projects/:project_id/edit/tasks/:task_id/edit" do
+  @project = current_org.projects.find(params[:project_id])
+  @task = @project.tasks.find(params[:task_id])
+  p "***************************************"
+  p @project
+  p @task
+
+  if request.xhr?
+    erb :'portal/tasks/_edit', layout: false, locals: {task: @task, project: @project }
+  else
+    erb :'portal/tasks/edit'
   end
 end
 

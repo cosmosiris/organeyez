@@ -7,7 +7,6 @@ $(document).ready(function() {
   submitNewTask();
   deleteTask();
   renderTaskEditForm();
-  editTask();
 });
 
 var renderNewProjectForm = function(){
@@ -81,7 +80,7 @@ var editProject = function(){
     }).done(function(response){
       console.log("SUCCESS");
     }).fail(function(error){
-      $("#edit_project_button").prepend(error.responseText);
+      $("#project_details_box").after(error.responseText);
       console.log("fail");
     });
   })
@@ -144,28 +143,25 @@ var deleteTask = function(){
 };
 
 var renderTaskEditForm = function(){
-  $(".task_edit_button").on("click", function(event){
+  $(".render_task_edit_form").on("submit", function(event){
     event.preventDefault();
-    console.log("success")
-  });
-}
 
-var editTask = function(){
-  $("#edit_task_form").on("submit", function(event){
-    event.preventDefault();
-    console.log("preventdefault");
+    taskViewBox = $(this).closest(".task_view_box")
 
-    url = $(this).attr("action");
+    url = $(this).attr("action")
+
+    console.log(url)
 
     $.ajax({
       url: url,
-      method: "put",
-      data: $(this).serialize()
+      method: "GET"
     }).done(function(response){
-      console.log("SUCCESS");
+      $(taskViewBox).parent().append(response);
+      $(taskViewBox).hide();
+      console.log(response);
     }).fail(function(error){
-      $("#edit_project_button").prepend(error.responseText);
-      console.log("fail");
-    });
-  })
+        console.log("failure")
+    })
+  });
 }
+

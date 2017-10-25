@@ -1,43 +1,20 @@
-<ul>
+<div class="task_view_box">
+  <li>
+    <p><strong><%= task.name %></strong></p>
+    <p><strong>Assigned to:</strong> <%= task.leader.first_name%> <%= task.leader.last_name%></p>
+    <p><strong>Description:</strong> <%= task.description %></p>
+    <p><strong>Notes:</strong> <%= task.notes %></p>
+    <div class="task_buttons">
+      <form action="/projects/<%= @project.id %>/edit/tasks/<%= task.id  %>/edit" class="render_task_edit_form">
+        <button type="submit" class="task_edit_button floatleft">Edit</button>
+      </form>
+      <button class="steps_view_button"><a href="">View Steps</a></button>
+      <form action="/tasks/<%= task.id  %>" method="POST" class="delete_task_form">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="project_id" value=<%= @project.id %>>
+        <input type="submit" value="delete" class="task_delete_button">
+      </form>
+    </div>
+  </li>
+</div>
 
-  <div class="task_view_box">
-    <li>
-      <p><strong><%= task.name %></strong></p>
-      <p><strong>Assigned to:</strong> <%= task.leader.first_name%> <%= task.leader.last_name%></p>
-      <p><strong>Description:</strong> <%= task.description %></p>
-      <p><strong>Notes:</strong> <%= task.notes %></p>
-      <div class="task_buttons">
-        <button class="task_edit_button floatleft"><a href="">Edit</a></button>
-        <button class="steps_view_button"><a href="">View Steps</a></button>
-        <form action="/tasks/<%= task.id  %>" method="POST" class="delete_task_form">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="hidden" name="project_id" value=<%= @project.id %>>
-          <input type="submit" value="delete" class="task_delete_button">
-        </form>
-      </div>
-    </li>
-  </div>
-
-  <div id="task_edit_box">
-    <form action="/tasks" method="POST" id="edit_task_form" class="hidden">
-    <input type="hidden" name="_method" value="PUT">
-      <input type="hidden" name="project_id" value=<%= @project.id %>>
-      <input type="hidden" name="task_id" value=<%= task.id %>>
-      <label class="textcenter block">Task Name</label>
-      <textarea name="name" rows="1" cols="60" placeholder="short description" value="<%= task.name %>"></textarea>
-      <label class="textcenter inline">Task Leader</label>
-      <select name="leader_id" class="dropdown">
-        <% @member_list = current_org.members %>
-        <% @member_list.each do |member| %>
-          <option width="100%" rows="1" cols="60" value=<%= member.id %>><%= member.first_name %> <%= member.last_name  %></option>
-        <% end %>
-      </select>
-      <label class="textcenter block">Short Description</label>
-      <textarea name="description" rows="5" cols="60" placeholder="short description" value="<%= task.description %>">></textarea>
-      <label class="textcenter block">Notes</label>
-      <textarea name="notes" rows="8" cols="60" placeholder="notes" value="<%= task.notes %>">></textarea>
-      <input type="submit" name="Update Task" class="floatcenter block">
-    </form>
-  </div>
-
-</ul>

@@ -66,8 +66,8 @@ li{
   font-size: 15px;
   background-color: white;
   border-color: #e6ccb3;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   font-family: sans-serif;
@@ -114,7 +114,7 @@ li{
 
 #project_task_list{
   /*border: 3px solid white;*/
-  width: 50%;
+  width: 60%;
   margin: 0 auto
 }
 
@@ -196,6 +196,10 @@ ul{
 
 p, h1, h2, h3, h4, h5, h6, span, button {
   font-family: 'Alegreya Sans', sans-serif !important;
+}
+
+.small_margin_bottom{
+  margin-bottom: 10px;
 }
 
 
