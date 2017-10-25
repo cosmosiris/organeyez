@@ -1,7 +1,19 @@
-<form action="/tasks" method="POST" id="new_task_form" class="hidden">
-  <input type="text" name="project[name]" placeholder="title">
-  <input type="text" name="project[start_date]" placeholder="start_date">
-  <input type="text" name="project[end_date]" placeholder="end_date">
-  <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
-  <input type="submit" name="Create Project">
-</form>
+  <div id="new_task_container">
+    <form action="/tasks" method="POST" id="new_task_form" class="hidden">
+      <input type="hidden" name="project_id" value=<%= @project.id %>>
+      <label class="textcenter block">Task Name</label>
+      <textarea name="task[name]" rows="1" cols="60" placeholder="short description"></textarea>
+      <label class="textcenter inline">Task Leader</label>
+      <select name="task[leader_id]" class="dropdown">
+        <% @member_list = current_org.members %>
+        <% @member_list.each do |member| %>
+          <option width="100%" rows="1" cols="60" value=<%= member.id %>><%= member.first_name %> <%= member.last_name  %></option>
+        <% end %>
+      </select>
+      <label class="textcenter block">Short Description</label>
+      <textarea name="task[description]" rows="5" cols="60" placeholder="short description"></textarea>
+      <label class="textcenter block">Notes</label>
+      <textarea name="task[notes]" rows="8" cols="60" placeholder="notes"></textarea>
+      <input type="submit" name="Create Task" class="floatcenter block">
+    </form>
+  </div>

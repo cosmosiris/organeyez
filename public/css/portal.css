@@ -1,0 +1,205 @@
+body {
+background: #eacda3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+/*organization home page*/
+.welcome{
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 2px 1px #e6ccb3;
+}
+
+.org_home_grid{
+  position: relative;
+  display: inline;
+  margin: auto;
+  height: 1000px;
+  text-align: center;
+  border: 3px solid white;
+}
+
+#mission_box, #principle_box{
+  display: inline-block;
+  border: 3px solid white;
+  padding: 5%;
+}
+
+li{
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+
+.homepage_project_view_box, .task_view_box{
+  background-color: #f2f2f2;
+  border: 2px solid #e6ccb3;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  height: 16%;
+  border-radius: 10px;
+  box-shadow: 3px 3px #e6ccb3;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.task_view_box{
+  align-items: left !important;
+  padding: 10px 30px;
+}
+
+.task_buttons, .project_buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*border: 3px solid white;*/
+}
+
+.project_delete_button, .project_view_button, .task_delete_button, .steps_view_button, .task_view_button, #new_task_button, #update_project_button, #edit_project_button, .edit_project, #new_project_button, .task_edit_button{
+  font-size: 15px;
+  background-color: white;
+  border-color: #e6ccb3;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+
+/*organization profile page*/
+
+#cover_photo_box{
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 300px;
+  border: 3px solid white;
+}
+
+/*project pages*/
+#project_details_box{
+  margin: 0 auto;
+  width: 70%;
+  /*border: 3px solid white;*/
+  min-height: 100vh;
+}
+
+#edit_project_form{
+  padding: 10px 0px;
+  width: 100%;
+}
+
+.edit_project, #edit_project{
+  margin-left: 0px !important;
+  margin-right: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+
+/*tasks*/
+
+#new_task_form{
+  margin: 0 auto;
+  border: 3px solid white;
+  padding: 8% 30%;
+  text-align: center;
+}
+
+#project_task_list{
+  /*border: 3px solid white;*/
+  width: 60%;
+  margin: 0 auto
+}
+
+.project_task{
+  height: 200px;
+}
+
+.update_project_button{
+  margin: 1%;
+}
+
+
+
+/*##member home page*/
+
+.member_home_grid{
+  display: inline;
+  margin: 0 auto;
+  border: 3px solid white;
+  height: 1000px;
+  text-align: center;
+}
+
+
+/*organization profile page*/
+
+
+/*general styles*/
+
+.textbold{
+  font-weight: bold;
+}
+
+.textcenter{
+  text-align: center;
+}
+
+.textleft{
+  text-align: left;
+}
+
+
+.hidden{
+  display: none;
+}
+
+.floatcenter{
+  float: center;
+}
+
+.floatright{
+  float: right;
+}
+
+.block{
+  display: block;
+}
+
+.inline{
+  display: inline;
+}
+
+ul{
+  padding: 0;
+}
+
+.page_headings{
+  font-size: 30px;
+  text-shadow: 2px 1px #e6ccb3;
+}
+
+.margincenter{
+  margin: 0 auto;
+}
+
+.border{
+  border: 3px solid white;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, button {
+  font-family: 'Alegreya Sans', sans-serif !important;
+}
+
+.small_margin_bottom{
+  margin-bottom: 10px;
+}
+
+

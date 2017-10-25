@@ -1,0 +1,21 @@
+<div class="task_edit_box">
+    <form action="/tasks" method="POST" id="edit_task_form">
+    <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="project_id" value=<%= @project.id %>>
+      <input type="hidden" name="task_id" value=<%= task.id %>>
+      <label class="textcenter block">Task Name</label>
+      <textarea name="name" rows="1" cols="60" class="small_margin_bottom"><%= task.name %></textarea>
+      <label class="textcenter block">Task Leader</label>
+      <select name="leader_id" class="dropdown small_margin_bottom">
+        <% @member_list = current_org.members %>
+        <% @member_list.each do |member| %>
+          <option width="100%" rows="1" cols="60" value=<%= member.id %>> <%= member.first_name %> <%= member.last_name  %></option>
+        <% end %>
+      </select>
+      <label class="textcenter block">Short Description</label>
+      <textarea name="description" rows="5" cols="60" class="small_margin_bottom"><%= task.description %></textarea>
+      <label class="textcenter block">Notes</label>
+      <textarea name="notes" rows="8" cols="60"><%= task.notes %>"</textarea>
+      <input type="submit" name="Update Task" class="update_task_button floatcenter block">
+    </form>
+  </div>
