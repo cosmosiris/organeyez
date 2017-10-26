@@ -1,0 +1,20 @@
+<div class="task_view_box">
+  <li>
+    <p class="bold"><%= task.name %></p>
+    <p>Assigned to: <%= task.leader.first_name%> <%= task.leader.last_name%></p>
+    <p>Description: <%= task.description %></p>
+    <p>Notes: <%= task.notes %></p>
+    <div class="task_buttons">
+      <form action="/projects/<%= @project.id %>/edit/tasks/<%= task.id  %>/edit" class="render_task_edit_form">
+        <button type="submit" class="task_edit_button floatleft">Edit</button>
+      </form>
+      <button class="steps_view_button"><a href="">View Steps</a></button>
+      <form action="/tasks/<%= task.id  %>" method="POST" class="delete_task_form">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="project_id" value=<%= @project.id %>>
+        <input type="submit" value="delete" class="task_delete_button">
+      </form>
+    </div>
+  </li>
+</div>
+

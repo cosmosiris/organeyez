@@ -1,0 +1,51 @@
+<div id="project_details_box" class="textcenter">
+  <form action="/projects" method="POST" id="edit_project_form">
+    <input type="hidden" name="_method" value="PUT" class="edit_project">
+    <input type="hidden" name="project_id" value="<%= @project.id %>">
+    <label>Project Name</label>
+    <input type="text" name="name" placeholder="title" value="<%= @project.name  %>" class="edit_project">
+    <label>Start Date</label>
+    <input type="text" name="start_date" placeholder="start_date" value="<%= @project.start_date  %>" class="edit_project">
+    <label>End Date</label>
+    <input type="text" name="end_date" placeholder="end_date" value="<%= @project.end_date  %>" class="edit_project">
+    <input type="submit" value="edit" id="edit_project_button">
+  </form>
+
+   <button id="update_project_button"><a href="/org_sessions/<%= current_org.id  %>">Update Project</a></button>
+
+
+  <div id="new_task_container">
+    <form action="/tasks" method="POST" id="new_task_form" class="hidden">
+      <input type="hidden" name="project_id" value=<%= @project.id %>>
+      <label class="textcenter block">Task Name</label>
+      <textarea name="task[name]" rows="1" cols="60" placeholder="short description"></textarea>
+      <label class="textcenter inline">Task Leader</label>
+      <select name="task[leader_id]" class="dropdown">
+        <% @member_list = current_org.members %>
+        <% @member_list.each do |member| %>
+          <option width="100%" rows="1" cols="60" value=<%= member.id %>><%= member.first_name %> <%= member.last_name  %></option>
+        <% end %>
+      </select>
+      <label class="textcenter block">Short Description</label>
+      <textarea name="task[description]" rows="5" cols="60" placeholder="short description"></textarea>
+      <label class="textcenter block">Notes</label>
+      <textarea name="task[notes]" rows="8" cols="60" placeholder="notes"></textarea>
+      <input type="submit" name="Create Task" class="floatcenter block">
+    </form>
+  </div>
+
+
+  <div class="textcenter" id="project_task_list">
+    <p class="page_headings"><%= @project.name %><br>Tasks</p>
+    <button id="new_task_button"><a href="/projects/<%=@project.id%>/edit/tasks/new">Add Task</a></button>
+    <% if @project.tasks %>
+      <% @project.tasks.each do |task| %>
+        <ul>
+        <%= erb :"portal/tasks/_tasks", layout: false, locals: { task: task, project: @project} %>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+

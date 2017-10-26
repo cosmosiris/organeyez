@@ -4,14 +4,15 @@ class User < ApplicationRecord
 
   include BCrypt
 
-  has_many :organization_members, foreign_key: :member_id
-  has_many :organizations, through: :organization_members
+  has_many :memberships, foreign_key: :member_id
+  has_many :organizations, through: :memberships
   has_many :reviews, foreign_key: :writer_id
   has_many :project_members, foreign_key: :member_id
   has_many :projects, through: :project_members
   has_many :tasks, foreign_key: :leader_id
 
-  validates :first_name, :last_name, :email, :password_hash, presence: true
+  validates :first_name, :last_name, :email, presence: true
+  validates :email, uniqueness: true
   validate  :presence_of_password
 
   def password
@@ -30,12 +31,17 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   private
   def presence_of_password
     if @plain_text_password == ""
       errors.add(:password, "can't be empty")
     end
   end
+
 
 
 
