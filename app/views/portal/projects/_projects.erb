@@ -1,8 +1,8 @@
 <div class="homepage_project_view_box">
-  <p><%= project.name  %></p>
+  <p class="bold"><%= project.name  %></p>
   <span>Start Date: <%= project.start_date %></span>
   <span><em></em>End Date: <%= project.end_date %></span>
-  <p>Status:</p>
+  <p class="green_text"><%= project.status %></p>
   <div class="project_buttons">
     <button class="project_view_button"><a href="/projects/<%= project.id %>/edit">View</a></button>
     <form action="/projects/<%= project.id  %>" method="POST" class="delete_project_form">

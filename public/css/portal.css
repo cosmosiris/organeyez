@@ -7,6 +7,7 @@ background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, F
 
 /*organization home page*/
 .welcome{
+  margin-top: 1%;
   text-align: center;
   font-size: 30px;
   text-shadow: 2px 1px #e6ccb3;
@@ -62,7 +63,7 @@ li{
   /*border: 3px solid white;*/
 }
 
-.project_delete_button, .project_view_button, .task_delete_button, .steps_view_button, .task_view_button, #new_task_button, #update_project_button, #edit_project_button, .edit_project, #new_project_button, .task_edit_button{
+.project_delete_button, .project_view_button, .task_delete_button, .steps_view_button, .task_view_button, #new_task_button, #update_project_button, #edit_project_button, .edit_project, #new_project_button, .task_edit_button, #remove_members_button{
   font-size: 15px;
   background-color: white;
   border-color: #e6ccb3;
@@ -138,6 +139,53 @@ li{
   text-align: center;
 }
 
+/*member profile page*/
+.profile_heading{
+  margin: 1% auto;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 2px 1px #e6ccb3;
+  width: 30%;
+}
+
+.activity_box{
+  border: 2px solid #e6ccb3;
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.personal_story{
+  margin: 0 auto;
+  max-width: 50%;
+  text-align: center;
+  min-height: 10vh;
+}
+
+.member_photo{
+  border: 2px solid #e6ccb3;
+  width: 200px;
+  text-align: center;
+  height: 250px;
+  display: inline;
+  float: left;
+  position: absolute;
+  left: 60px;
+  top: 80px;
+}
+
+.membership_statistics{
+  margin: 0 auto;
+  max-width: 50%;
+  text-align: center;
+  min-height: 30vh;
+  margin-bottom: 100px;
+}
 
 /*organization profile page*/
 
@@ -201,5 +249,27 @@ p, h1, h2, h3, h4, h5, h6, span, button {
 .small_margin_bottom{
   margin-bottom: 10px;
 }
+
+.dropdown{
+  padding: 10px;
+  /*border: 3px solid white;*/
+}
+
+.green_text{
+  color: #2eb82e;
+}
+
+.bold{
+  text-shadow: 1px 0px black;
+}
+
+a, a:visited {
+  color:#000000;
+}
+
+a:hover {
+  color:#005ce6;
+}  /* mouse over link */
+
 
 

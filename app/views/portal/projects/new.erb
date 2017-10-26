@@ -1,8 +1,14 @@
 <form action="/projects" method="POST" id="new_project_form">
-<input type="text" name="project[name]" placeholder="title">
-<input type="text" name="project[start_date]" placeholder="start_date">
-<input type="text" name="project[end_date]" placeholder="end_date">
-<input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
-<input type="submit" name="Create Project">
+  <input type="text" name="project[name]" placeholder="title">
+  <input type="text" name="project[start_date]" placeholder="start_date">
+  <input type="text" name="project[end_date]" placeholder="end_date">
+  <select name="project[status]" class="dropdown">
+    <option width="100%" rows="1" cols="60" value="Not Started">Not Started</option>
+    <option width="100%" rows="1" cols="60" value="In Progress">In Progress</option>
+    <option width="100%" rows="1" cols="60" value="In Review">In Review</option>
+    <option width="100%" rows="1" cols="60" value="Complete">Complete</option>
+  </select>
+  <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
+  <input type="submit" value="Create Project">
 </form>
 

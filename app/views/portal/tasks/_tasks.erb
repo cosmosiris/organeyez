@@ -1,9 +1,9 @@
 <div class="task_view_box">
   <li>
-    <p><strong><%= task.name %></strong></p>
-    <p><strong>Assigned to:</strong> <%= task.leader.first_name%> <%= task.leader.last_name%></p>
-    <p><strong>Description:</strong> <%= task.description %></p>
-    <p><strong>Notes:</strong> <%= task.notes %></p>
+    <p class="bold"><%= task.name %></p>
+    <p>Assigned to: <%= task.leader.first_name%> <%= task.leader.last_name%></p>
+    <p>Description: <%= task.description %></p>
+    <p>Notes: <%= task.notes %></p>
     <div class="task_buttons">
       <form action="/projects/<%= @project.id %>/edit/tasks/<%= task.id  %>/edit" class="render_task_edit_form">
         <button type="submit" class="task_edit_button floatleft">Edit</button>

@@ -14,6 +14,8 @@ User.create(first_name: "Bertisha", last_name: "Jones", email: "bertisha@gmail.c
   User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: "fake_account@gmail.com", password: "1234")
 end
 
-5.times do |i|
-  dd.memberships.create(member_id: i+1)
-end
+
+dd.memberships.create(member_id: 1)
+dd.memberships.create(member_id: 2)
+dd.memberships.create(member_id: 3)
+
