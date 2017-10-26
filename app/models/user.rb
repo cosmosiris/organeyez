@@ -31,12 +31,17 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   private
   def presence_of_password
     if @plain_text_password == ""
       errors.add(:password, "can't be empty")
     end
   end
+
 
 
 

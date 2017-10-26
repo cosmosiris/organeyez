@@ -8,11 +8,11 @@
   <div class="col-2 org_home_grid"> <!-- Display Members -->
       <p class="page_headings">Members</p>
       <form action="">
-        <input type="Submit" value="Edit Members">
+        <input type="Submit" value="Remove Members" id="remove_members_button">
       </form>
       <ul>
         <% current_org.members.each do |member| %>
-          <li><%= member.first_name %> <%= member.last_name %></li>
+          <li><a href="/members/<%= member.id  %>"><%= member.full_name %></a></li>
         <% end %>
       </ul>
 
@@ -24,13 +24,23 @@
 
     <button id="new_project_button"><a href="/org_sessions/<%= current_org.id  %>/projects/new">Create a New Project</a></button>
 
-      <form action="/projects" method="POST" id="new_project_form" class="hidden">
-        <input type="text" name="project[name]" placeholder="title">
-        <input type="text" name="project[start_date]" placeholder="start_date">
-        <input type="text" name="project[end_date]" placeholder="end_date">
-        <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
-        <input type="submit" name="Create Project">
-      </form>
+    <form action="/projects" method="POST" id="new_project_form" class="hidden">
+      <input type="text" name="project[name]" placeholder="title">
+      <input type="text" name="project[start_date]" placeholder="start_date">
+      <input type="text" name="project[end_date]" placeholder="end_date"><br>
+      <div class="dropdown">
+        <select name="project[status]">
+          <option width="100%" rows="1" cols="60" value="Not Started">Not Started</option>
+          <option width="100%" rows="1" cols="60" value="In Progress">In Progress</option>
+          <option width="100%" rows="1" cols="60" value="In Review">In Review</option>
+          <option width="100%" rows="1" cols="60" value="Complete">Complete</option>
+        </select><br>
+      </div>
+      <input type="hidden" name="project[organization_id]" value="<%= params[:id] %>">
+      <input type="submit" value="Create Project">
+    </form>
+
+
 
 
 

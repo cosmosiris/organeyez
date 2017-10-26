@@ -33,13 +33,13 @@ var submitNewProject = function(){
       data: data
     }).done(function(response){
       $("#project_display_list").append(response);
+      $("#new_project_form").addClass("hidden");
+      $("#new_project_button").show();
       form.reset();
       console.log("success")
     }).fail(function(error){
        $("#project_display_list").prepend(error.responseText);
     });
-    $("#new_project_form").addClass("hidden");
-    $("#new_project_button").show();
   });
 }
 
