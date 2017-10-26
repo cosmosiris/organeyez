@@ -4,6 +4,6 @@ class Project < ApplicationRecord
   has_many :reviews
   has_many :members, {through: :project_members}
 
-  validates :name, :organization_id, :start_date, :end_date, {presence: true}
+  validates :name, :organization_id, :start_date, :end_date, :status, presence: true
 end
 
