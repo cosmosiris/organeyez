@@ -1,10 +1,12 @@
 require 'uri'
 require 'net/http'
+require_relative 'event'
 
 class EventBriteAdapter
   attr_reader :url
 
   def initialize
+    @api_key = ENV['42KTSFIVYR6ATL3HK4IL']
     @url = URI("https://www.eventbriteapi.com/v3/users/me/owned_events/?token=#{ENV["EVENTBRITE_PERSONAL_OAUTH_TOKEN"]}")
   end
 
@@ -18,6 +20,7 @@ class EventBriteAdapter
     # request["postman-token"] = '360098b1-ac77-834a-589a-47373822397e'
 
     response = http.request(request)
-    response.read_body
+    JSON.parse(response.read_body)["events"].map {|event| Event.new(event)}
   end
+
 end

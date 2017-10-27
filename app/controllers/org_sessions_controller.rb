@@ -17,6 +17,7 @@ end
 
 get '/org_sessions/:id' do
   @organization = Organization.find(params[:id])
+  # @events = EventBriteAdapter.new.return_events
 
   erb :'portal/organizations/home', :layout => :'layouts/organization_layout'
 end
@@ -62,4 +63,5 @@ post '/org_sessions/:id/profile/create_principle' do
     erb :'portal/organizations/create_principle', :layout => :'layouts/organization_layout'
   end
 end
+
 
