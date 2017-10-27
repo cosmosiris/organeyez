@@ -21,21 +21,31 @@ background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, F
   border: 3px solid white;
 }
 
-.org_events{
+#org_events{
   margin: 0 auto;
-  max-width: 50%;
-  text-align: center;
+  max-width: 90%;
   min-height: 30vh;
   margin-bottom: 100px;
   margin-top: 50px;
   border: 3px solid white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
-#mission_box, #principle_box{
-  display: inline-block;
-  border: 3px solid white;
-  padding: 5%;
+.event_view_box{
+  background-color: white;
+  border: 2px solid #e6ccb3;
+  text-align: center;
+  font-size: 20px;
+  margin: 3%;
+  height: 16%;
+  width: 15%;
+  border-radius: 10px;
+  box-shadow: 3px 3px #e6ccb3;
 }
+
 
 li{
   list-style-type: none;
@@ -64,7 +74,7 @@ li{
   padding: 10px 30px;
 }
 
-.task_buttons, .project_buttons{
+.task_buttons, .project_buttons, .principle_buttons{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -91,6 +101,24 @@ li{
   width: 80%;
   height: 300px;
   border: 3px solid white;
+}
+
+#principle_box{
+  font-size: 30px;
+  display: inline-block;
+  border: 3px solid white;
+  padding: 5%;
+  width: 40%;
+}
+
+#mission_box{
+  font-size: 30px;
+  display: inline-block;
+  border: 3px solid white;
+  padding: 2%;
+  width: 50%;
+  position: relative;
+  margin-top: 0;
 }
 
 /*project pages*/
@@ -274,6 +302,7 @@ p, h1, h2, h3, h4, h5, h6, span, button {
 
 a, a:visited {
   color:#000000;
+  font-size: 15px !important;
 }
 
 a:hover {

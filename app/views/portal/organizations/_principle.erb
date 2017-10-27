@@ -1,0 +1,11 @@
+<div class="individual_principle">
+  <p><strong><%= principle.principle %></strong></p>
+  <p><em><%= principle.description %></em></p>
+  <div class="principle_buttons">
+    <button class="project_view_button"><a href="">Update</a></button>
+    <form action="/" method="POST" class="delete_project_form">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete" class="project_delete_button">
+    </form>
+  </div>
+</div>
