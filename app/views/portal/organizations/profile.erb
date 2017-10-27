@@ -12,13 +12,14 @@
 
   <div id="principle_box">
     <h2>Principles</h2>
-    <a class="edit_button" href="/org_sessions/:id/profile/create_principle">add</a>
 
     <ul id="principles_list">
       <% current_org.principles.each do |principle| %>
           <%= erb :"portal/organizations/_principle", layout: false, locals: { principle: principle}  %>
       <% end %>
     </ul>
+
+    <a class="edit_button" href="/org_sessions/:id/profile/create_principle">add</a>
   </div>
 
 
