@@ -21,7 +21,7 @@ get '/member_sessions/:id' do
 end
 
 get '/member_sessions/:id/profile' do
-
+  @member = User.find(params[:id])
   erb :'/portal/members/profile', :layout => :'layouts/member_layout'
 end
 

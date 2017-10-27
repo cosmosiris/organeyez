@@ -14,8 +14,3 @@ post '/members' do
     erb :'static/registration'
   end
 end
-
-get '/members/:id' do
-  @member = User.find(params[:id])
-  erb :'/portal/members/profile', layout: :'layouts/organization_layout'
-end

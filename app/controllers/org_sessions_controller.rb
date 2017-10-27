@@ -63,4 +63,8 @@ post '/org_sessions/:id/profile/create_principle' do
   end
 end
 
+get '/members/:id' do
+  @member = User.find(params[:id])
+  erb :'/portal/members/profile', layout: :'layouts/organization_layout'
+end
 
