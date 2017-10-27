@@ -20,7 +20,25 @@ class EventBriteAdapter
     # request["postman-token"] = '360098b1-ac77-834a-589a-47373822397e'
 
     response = http.request(request)
-    JSON.parse(response.read_body)["events"].map {|event| Event.new(event)}
+    JSON.parse(response.read_body)["events"]
+    # ["events"].map {|event| Event.new(event)}
   end
+
+  def events_array
+    @events_array = self.return_events
+  end
+
+  def extract_details
+    self.events_array
+    @event_details = Array.new
+    self.events_array.each do |event|
+      @event_details.push({:name => event["name"]["text"], :description => event["description"]["text"], :url => event["url"], :date => Time.parse(event["start"]["local"]).strftime("%A %B %dth %Y"), :start_time => Time.parse(event["start"]["local"]).strftime("%I:%M %p"), :end_time => Time.parse(event["end"]["local"]).strftime("%I:%M %p") })
+    end
+    return @event_details
+  end
+
+
+
+
 
 end

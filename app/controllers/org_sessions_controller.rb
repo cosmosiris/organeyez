@@ -17,7 +17,6 @@ end
 
 get '/org_sessions/:id' do
   @organization = Organization.find(params[:id])
-  # @events = EventBriteAdapter.new.return_events
 
   erb :'portal/organizations/home', :layout => :'layouts/organization_layout'
 end
@@ -28,7 +27,7 @@ delete '/org_sessions' do
 end
 
 get '/org_sessions/:id/profile' do
-
+  @events = EventBriteAdapter.new.extract_details
   erb :'portal/organizations/profile', :layout => :'layouts/organization_layout'
 end
 

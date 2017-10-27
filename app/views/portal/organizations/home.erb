@@ -10,7 +10,7 @@
       <form action="">
         <input type="Submit" value="Remove Members" id="remove_members_button">
       </form>
-      <ul>
+      <ul id="members_list">
         <% current_org.members.each do |member| %>
           <li><a href="/members/<%= member.id  %>"><%= member.full_name %></a></li>
         <% end %>
@@ -58,11 +58,5 @@
   </div>
 
 </div>
-
-<div class="org_events">
-<div>Upcoming Events</div>
-<p></p>
-</div>
-
 
 <!-- Accountability Processes -->
