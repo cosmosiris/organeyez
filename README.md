@@ -16,11 +16,12 @@ Iris Nevins => @cosmosiris
 
 ### Technologies 
 1. Ruby on Rails & Ruby
-2. Devise
+2. Evenbrite API (for listing an organization's upcoming events)
 3. HTML
 4. JQuery & Javascript
 5. CSS
 6. Bootstrap
+
 
 
 
