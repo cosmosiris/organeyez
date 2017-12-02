@@ -1,30 +1,27 @@
-> **Note**: This branch (master) contains a skeleton without any app code, perfect for creating a _new_ application or challenge. If you're looking for an example app built with this skeleton, take a look at the [example](/../..//tree/example) branch which includes basic CRUD and RSpec tests.
+### Organ Eyez
+This app was intended to be an accountability app for social justice organizations that allows them to manage projects, facilitate accountability processes, and track membership participation. The first iteration of this project is done in sinatra and incomplete. I plan to rebuild the app from scratch with a much more complex database schema. 
 
-### Purpose
-The Sinatra Skeleton:
+### Forking This App
+Everything is setup for you. All you need to do is:
 
-1. Provides a foundation for building challenges or creating a new Sinatra application.
-2. Demonstrates a reasonable set of practices around building Sinatra applications.
-3. Eases the transition to Rails for Dev Bootcamp students
+1. `bundle install`
+2. `rails db:create`
+3. `rails db:migrate`
+4. update your seed file with your own login information
+5. `rails s`
 
-### Quickstart
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+### Contributors
+@cosmosiris 
 
-As needed, create models & migrations with the `rake` tasks:
+### Technologies 
+1. Ruby on Rails & Ruby
+2. Devise
+3. HTML
+4. JQuery & Javascript
+5. CSS
+6. Bootstrap
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
 
-### Contributing
 
-We would love for you to help make the skeleton more awesome, There are three ways to contribute:
 
-1. Ask for a bug fix or enhancement!
-2. Submit a pull request for a bug fix or enhancement!
-3. Code review an open pull request!
-
-Be prepared to give and receive specific, actionable, and kind feedback!
