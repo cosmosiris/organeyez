@@ -91,6 +91,9 @@ li{
   text-align: center;
 }
 
+#principles_list{
+  font-size: 20px !important;
+}
 #mission_box{
   font-size: 30px;
   display: inline-block;

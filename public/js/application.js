@@ -103,6 +103,7 @@ var submitNewTask = function(){
     url = $(this).attr("action");
     method = $(this).attr("method");
     data = $(this).serialize();
+    form = this
 
     $.ajax({
       url: url,
@@ -117,6 +118,8 @@ var submitNewTask = function(){
     });
       $("#new_task_button").show();
       $("#new_task_form").addClass("hidden");
+      $("#new_task_form").addClass("hidden");
+      form.reset();
   });
 }
 
