@@ -12,7 +12,7 @@ Everything is setup for you. All you need to do is:
 
 
 ### Contributors
-@cosmosiris 
+Iris Nevins => @cosmosiris 
 
 ### Technologies 
 1. Ruby on Rails & Ruby
